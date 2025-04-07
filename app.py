@@ -26,7 +26,7 @@ st.markdown("This Gemini remembers you're Nik during your chat session 🤖")
 api_key = st.secrets["GEMINI_API_KEY"]
 
 # --- Gemini Model ---
-llm = ChatGoogleGenerativeAI(model="gemini-2.0", google_api_key=api_key)
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=api_key)
 
 # --- Memory Setup ---
 memory = ConversationBufferMemory(return_messages=True)
