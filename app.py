@@ -190,7 +190,7 @@ if uploaded_files and (st.session_state.chain is None or clear_files):
                     google_api_key=api_key,
                     temperature=0.2
                 )
-                memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+                memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True, output_key="answer")
                 retriever = vectorstore.as_retriever(search_kwargs={"k": k_docs})
                 
                 chain = ConversationalRetrievalChain.from_llm(
