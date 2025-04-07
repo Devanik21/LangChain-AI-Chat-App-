@@ -6,3 +6,8 @@ pypdf
 faiss-cpu
 tiktoken
 docx2txt
+unstructured
+python-pptx
+openpyxl
+beautifulsoup4
+ebooklib
