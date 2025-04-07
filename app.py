@@ -18,7 +18,8 @@ from langchain.document_loaders import (
 api_key = st.secrets["GEMINI_API_KEY"]
 
 # --- Page Config and Custom CSS ---
-st.set_page_config(page_title="📄 Chat with Your Docs (LangChain + Gemini)", layout="wide")
+st.set_page_config(page_title="📄 Chat with Your Docs (LangChain + Gemini)",page_icon="📝", layout="wide")
+
 st.markdown("""
     <style>
     .main { background-color: #f8f9fa; }
