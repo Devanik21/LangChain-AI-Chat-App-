@@ -44,7 +44,7 @@ st.markdown("""
         background-color: #175673;
     }
     .chat-bot {
-        background-color: #481257;
+        background-color: #3f0f4d;
     }
     </style>
 """, unsafe_allow_html=True)
