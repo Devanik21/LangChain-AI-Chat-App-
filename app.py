@@ -70,7 +70,7 @@ if uploaded_files:
     vectorstore = FAISS.from_documents(docs, embeddings)
 
     # 🤖 LLM & Memory
-    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", google_api_key=api_key)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=api_key)
     memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
     retriever = vectorstore.as_retriever(search_kwargs={"k": 3})
     chain = ConversationalRetrievalChain.from_llm(llm=llm, retriever=retriever, memory=memory)
