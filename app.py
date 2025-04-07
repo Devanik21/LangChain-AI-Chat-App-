@@ -41,10 +41,10 @@ st.markdown("""
         border-radius: 10px;
     }
     .chat-user {
-        background-color: #e1f5fe;
+        background-color: #175673;
     }
     .chat-bot {
-        background-color: #f1f8e9;
+        background-color: #481257;
     }
     </style>
 """, unsafe_allow_html=True)
