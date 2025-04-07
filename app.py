@@ -41,19 +41,19 @@ st.markdown("""
 st.title("💬 Continuous Chat App with Memory")
 st.markdown("Chat with Gemini and retain conversation context within your session.")
 
-# 🔐 Gemini API Key (ensure your GEMINI_API_KEY is set in your Streamlit secrets)
+# 🔐 API Key from Streamlit secrets
 api_key = st.secrets["GEMINI_API_KEY"]
 
-# --- LLM and Memory Setup ---
+# ✅ Setup LLM and Memory (with correct key: 'history')
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", google_api_key=api_key)
-memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+memory = ConversationBufferMemory(return_messages=True)
 conversation = ConversationChain(llm=llm, memory=memory)
 
-# --- Session State Initialization ---
+# 🔄 Chat session state
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = []
 
-# --- Chat Interface ---
+# 💬 Chat UI
 col1, col2 = st.columns([5, 1])
 with col1:
     query = st.text_input("Nik, ask your question:", key="query_input")
@@ -70,7 +70,7 @@ if clear:
     st.session_state.chat_history = []
     memory.clear()
 
-# --- Display Conversation ---
+# 📜 Display conversation
 for q, a in st.session_state.chat_history:
     st.markdown(f"""
         <div class='chat-bubble chat-user'><strong>Nik:</strong> {q}</div>
