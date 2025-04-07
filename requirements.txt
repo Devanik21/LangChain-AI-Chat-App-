@@ -10,4 +10,5 @@ unstructured
 python-pptx
 openpyxl
 beautifulsoup4
+jq
 ebooklib
