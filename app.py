@@ -17,11 +17,41 @@ from langchain.document_loaders import (
 # 🔐 Gemini API Key
 api_key = st.secrets["GEMINI_API_KEY"]
 
+# --- Page Config and Custom CSS ---
 st.set_page_config(page_title="📄 Chat with Your Docs (LangChain + Gemini)", layout="wide")
+st.markdown("""
+    <style>
+    .main { background-color: #f8f9fa; }
+    .stButton>button {
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        border-radius: 8px;
+        padding: 8px 16px;
+    }
+    .stTextInput>div>div>input {
+        border-radius: 8px;
+        padding: 8px;
+        font-size: 16px;
+    }
+    .uploadedFile { color: #4a4a4a; font-weight: 600; }
+    .chat-bubble {
+        padding: 12px;
+        margin: 8px 0;
+        border-radius: 10px;
+    }
+    .chat-user {
+        background-color: #e1f5fe;
+    }
+    .chat-bot {
+        background-color: #f1f8e9;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- Title & Description ---
 st.title("📄 Chat with Your Docs using LangChain + Gemini")
 st.markdown("Upload files (PDF, DOCX, TXT, CSV, JSON, MD, PPTX, XLSX, HTML) and ask anything about them!")
-
-
 
 # 🗂️ Upload section
 uploaded_files = st.file_uploader(
@@ -79,15 +109,30 @@ if uploaded_files:
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
 
-    query = st.text_input("Ask a question about your documents:")
-    if st.button("Submit") and query:
+    st.markdown("---")
+    st.subheader("💬 Chat with your documents")
+    
+    col1, col2 = st.columns([5, 1])
+    with col1:
+        query = st.text_input("Ask a question about your documents:", key="query_input")
+    with col2:
+        clear = st.button("🧹 Clear Chat")
+
+    submit = st.button("Submit", use_container_width=True)
+
+    if submit and query:
         result = chain({"question": query})
         answer = result["answer"]
         st.session_state.chat_history.append((query, answer))
 
+    if clear:
+        st.session_state.chat_history = []
+
     # 📝 Display conversation
     for i, (q, a) in enumerate(st.session_state.chat_history):
-        st.markdown(f"**You:** {q}")
-        st.markdown(f"**Gemini:** {a}")
+        st.markdown(f"""
+            <div class='chat-bubble chat-user'><strong>You:</strong> {q}</div>
+            <div class='chat-bubble chat-bot'><strong>Gemini:</strong> {a}</div>
+        """, unsafe_allow_html=True)
 else:
     st.info("📂 Upload some documents to get started.")
