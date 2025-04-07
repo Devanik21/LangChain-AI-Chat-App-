@@ -22,8 +22,6 @@ st.title("📄 Chat with Your Docs using LangChain + Gemini")
 st.markdown("Upload files (PDF, DOCX, TXT, CSV, JSON, MD, PPTX, XLSX, HTML) and ask anything about them!")
 
 
-import pypandoc
-pypandoc.download_pandoc()
 
 # 🗂️ Upload section
 uploaded_files = st.file_uploader(
