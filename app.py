@@ -21,6 +21,10 @@ st.set_page_config(page_title="📄 Chat with Your Docs (LangChain + Gemini)", l
 st.title("📄 Chat with Your Docs using LangChain + Gemini")
 st.markdown("Upload files (PDF, DOCX, TXT, CSV, JSON, MD, PPTX, XLSX, HTML, EPUB) and ask anything about them!")
 
+
+import pypandoc
+pypandoc.download_pandoc()
+
 # 🗂️ Upload section
 uploaded_files = st.file_uploader(
     "Upload your documents", 
