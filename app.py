@@ -34,11 +34,11 @@ st.set_page_config(page_title="DocGenius: Advanced Document Chat", page_icon="ðŸ
 st.markdown("""
     <style>
     .main { 
-        background: linear-gradient(to right, #1662a8, #123f6b); 
+        background: linear-gradient(to right, #f8f9fa, #e9ecef); 
     }
     .stButton>button {
-        background: linear-gradient(to right, #4CAF50, #0f4a10);
-        color: black;
+        background: linear-gradient(to right, #4CAF50, #2E8B57);
+        color: white;
         font-size: 16px;
         border-radius: 8px;
         padding: 10px 20px;
@@ -515,7 +515,8 @@ with tab2:
         with col2:
             model_option = st.selectbox(
                 "Choose Gemini Model:",
-                ["gemini-1.5-flash", "gemini-1.5-pro"],
+                ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-pro","gemini-2.0-flash-lite","gemini-2.0-pro-exp-02-05",
+"gemini-2.0-flash-thinking-exp-01-21","gemini-2.5-pro-exp-03-25","gemini-1.5-flash-8b"],
                 help="Flash is faster, Pro is more capable for complex reasoning"
             )
         
@@ -668,7 +669,7 @@ with tab3:
                 topics_img = generate_topics_wordcloud(st.session_state.doc_topics)
                 if topics_img:
                     st.markdown("<h3>Common Topics</h3>", unsafe_allow_html=True)
-                    st.image(f"data:image/png;base64,{topics_img}", use_column_width=True)
+                    st.image(f"data:image/png;base64,{topics_img}", use_container_width =True)
                 else:
                     st.info("Not enough topic data for visualization.")
             else:
