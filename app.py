@@ -28,7 +28,7 @@ from langchain.schema import Document
 api_key = st.secrets["GEMINI_API_KEY"]
 
 # --- Page Config and Custom CSS ---
-st.set_page_config(page_title="DocGenius: Advanced Document Chat", page_icon="🧠", layout="wide")
+st.set_page_config(page_title="DocGenius: Advanced Document Chat", page_icon="🤖", layout="wide")
 
 # Custom CSS for a more professional look
 st.markdown("""
