@@ -296,7 +296,7 @@ def extract_document_topics(file_name, docs):
     """
     
     # Use the LLM to extract topics
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", google_api_key=api_key)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=api_key)
     topics_text = llm.invoke(topic_prompt)
     
     # Increment API call counter
@@ -393,7 +393,7 @@ def generate_topics_wordcloud(topics_dict):
 col1, col2 = st.columns([1, 5])
 
 with col1:
-    st.image("https:brain--v2.png", width=80)
+    st.image("https://img.icons8.com/llcolor/96/000000/brain--v2.png", width=80)
 with col2:
     st.title("DocGenius: Advanced Document Chat")
     st.markdown("<p style='font-size: 1.2em;'>Intelligent conversation with your documents powered by Gemini + LangChain</p>", unsafe_allow_html=True)
@@ -721,7 +721,7 @@ with tab4:
     with col1:
         default_model = st.selectbox(
             "Default Chat Model",
-            ["gemini-1.5-flash", "gemini-1.5-pro"],
+            ["gemini-1.5-flash", "gemini-2.0-flash", "gemini-2.0-flash-lite"],
             index=0
         )
         
