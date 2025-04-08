@@ -96,7 +96,7 @@ st.markdown("""
     .stTabs [data-baseweb="tab"] {
         height: 50px;
         white-space: pre-wrap;
-        background-color: #f8f9fa;
+        background-color: 2e0a36;
         border-radius: 4px 4px 0px 0px;
         gap: 1px;
         padding-top: 10px;
