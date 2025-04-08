@@ -12,6 +12,8 @@ python-pptx
 openpyxl
 beautifulsoup4
 jq
+plotly
+matplotlib
 ebooklib
 markdown
 pypandoc
