@@ -103,7 +103,7 @@ st.markdown("""
         padding-bottom: 10px;
     }
     .stTabs [aria-selected="true"] {
-        background-color: #4CAF50 !important;
+        background-color: #1b4a6b !important;
         color: white !important;
     }
     div[data-testid="stSidebarNav"] li div a {
