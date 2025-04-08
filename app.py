@@ -393,7 +393,8 @@ def generate_topics_wordcloud(topics_dict):
 col1, col2 = st.columns([1, 5])
 
 with col1:
-    st.image("https://img.icons8.com/llcolor/96/000000/brain--v2.png", width=80)
+    st.markdown("<h1 style='font-size: 3em; margin-top: 0.2em;'>🧬</h1>", unsafe_allow_html=True)
+
 with col2:
     st.title("DocGenius: Advanced Document Chat")
     st.markdown("<p style='font-size: 1.2em;'>Intelligent conversation with your documents powered by Gemini + LangChain</p>", unsafe_allow_html=True)
