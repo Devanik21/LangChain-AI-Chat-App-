@@ -34,7 +34,7 @@ st.set_page_config(page_title="DocGenius: Advanced Document Chat", page_icon="ðŸ
 st.markdown("""
     <style>
     .main { 
-        background: linear-gradient(to right, #f8f9fa, #e9ecef); 
+        background: linear-gradient(to right, #1662a8, #123f6b); 
     }
     .stButton>button {
         background: linear-gradient(to right, #4CAF50, #2E8B57);
