@@ -66,7 +66,7 @@ st.markdown("""
         overflow-y: auto;
         padding: 15px;
         border-radius: 10px;
-        background-color: rgba(255,255,255,0.7);
+        background-color: rgba(0,0,0,0.7);
         backdrop-filter: blur(10px);
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
