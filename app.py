@@ -85,7 +85,7 @@ st.markdown("""
         border-bottom-right-radius: 5px;
     }
     .chat-bot {
-        background: linear-gradient(135deg, #1f4766 0%, #10171c 100%);
+        background: linear-gradient(135deg, #326285 0%, #10171c 100%);
         color: white;
         margin-right: auto;
         border-bottom-left-radius: 5px;
