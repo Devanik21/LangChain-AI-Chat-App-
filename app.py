@@ -38,12 +38,12 @@ st.markdown("""
     }
     .stButton>button {
         background: linear-gradient(to right, #4CAF50, #0f4a10);
-        color: white;
+        color: black;
         font-size: 16px;
         border-radius: 8px;
         padding: 10px 20px;
         border: none;
-        box-shadow: 0 4px 6px rgba(0,0,110,0.1);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         transition: all 0.3s ease;
     }
     .stButton>button:hover {
